@@ -182,7 +182,7 @@ action = %(<%= $fail2ban::action %>)s
 [sshd]
 enabled = <%= "ssh" in $fail2ban::jails %>
 port    = ssh
-logpath = %(sshd_log)s
+backend = systemd
 
 
 [sshd-ddos]
@@ -191,7 +191,7 @@ logpath = %(sshd_log)s
 # in the body.
 enabled = <%= "ssh-ddos" in $fail2ban::jails %>
 port    = ssh
-logpath = %(sshd_log)s
+backend = systemd
 
 
 [dropbear]
